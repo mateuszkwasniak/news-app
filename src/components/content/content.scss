@@ -1,0 +1,12 @@
+@import "../../index.scss";
+
+.content {
+  position: sticky;
+  top: 9vh;
+  height: 82vh;
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../index.scss";
+
+.footer {
+  position: sticky;
+  height: 10vh;
+  height: 9vh;
+  top: 88vh;
+  display: flex;
+  background-color: var(--main-bcg);
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 1rem 0rem;
+  z-index: -1;
+
+  .pages {
+    flex: 1;
+    font-size: 1.75rem;
+    color: var(--text-lighter);
+    opacity: 0.8;
+    text-align: center;
+  }
+  .time {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 80%;
+    width: fit-content;
+    color: var(--text-main);
+    border-left: 1px solid var(--light-gray);
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include tablet {
+      position: relative;
+    }
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    span {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import "../../index.scss";
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  .background {
+    background-color: var(--light-gray);
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+  }
+
+  .info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    height: fit-content;
+    max-height: 60rem;
+    background-color: var(--main-bcg);
+    border-radius: 10px;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    @include mobile {
+      width: 90%;
+    }
+    button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem;
+      background: none;
+      border: none;
+      transition: all 0.1s ease-in-out;
+
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      text-align: center;
+      padding-bottom: 2rem;
+      height: fit-content;
+      border-bottom: 1px solid var(--light-gray);
+      p {
+        height: 100%;
+        font-size: 1.5rem;
+        color: var(--text-main);
+      }
+    }
+
+    span {
+      font-size: 2.25rem;
+      color: var(--text-lighter);
+    }
+
+    a {
+      span {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--light-gray);
+        border-radius: 15px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: var(--main);
+          border-color: var(--main);
+        }
+      }
+    }
+  }
+}

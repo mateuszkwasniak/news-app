@@ -1,0 +1,66 @@
+@import "../../index.scss";
+
+.home {
+  position: relative;
+  flex: 1;
+  overflow-y: hidden;
+  border-left: 1px solid var(--light-gray);
+  display: flex;
+  justify-content: center;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::before {
+    content: "";
+    background-image: url("/bcg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+  }
+
+  h1 {
+    position: relative;
+    top: 40%;
+    height: fit-content;
+    font-size: 8rem;
+    color: var(--main);
+    width: 60%;
+
+    @include mobile {
+      width: 90%;
+      font-size: 4rem;
+    }
+
+    span {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 5rem);
+      text-align: center;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      opacity: 0;
+      &.active {
+        visibility: visible;
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(3rem);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}

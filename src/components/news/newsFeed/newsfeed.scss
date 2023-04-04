@@ -1,0 +1,115 @@
+@import "../../../index.scss";
+.newsFeed {
+  display: flex;
+  gap: 3rem;
+  padding: 0 5rem;
+  list-style: none;
+
+  @include mobile {
+    padding: 0 1rem;
+  }
+
+  &.list {
+    flex-direction: column;
+
+    .listItem {
+      width: 75%;
+      padding: 1rem;
+      padding-left: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      cursor: pointer;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &:hover {
+        img {
+          opacity: 1;
+          animation-duration: 0.3s;
+          animation-name: hop;
+          animation-direction: alternate;
+          animation-fill-mode: backwards;
+        }
+        .info {
+          h3 {
+            color: var(--main);
+          }
+        }
+      }
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        opacity: 0.65;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        h3 {
+          font-size: 2.25rem;
+          font-weight: 500;
+          color: var(--text-main);
+          margin-bottom: 0.5rem;
+          transition: all 0.3s ease-in-out;
+          @include mobile {
+            font-size: 1.75rem;
+          }
+        }
+
+        .source,
+        .date {
+          font-size: 1.5rem;
+          color: var(--text-lighter);
+          @include mobile {
+            font-size: 1.25rem;
+          }
+        }
+      }
+
+      @keyframes hop {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-4px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    hr {
+      height: 0;
+      border: none;
+      border-top: 1px solid var(--light-gray);
+      width: 75%;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+
+  &.tiles {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

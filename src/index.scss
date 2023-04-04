@@ -1,0 +1,43 @@
+:root {
+  --main: #e85115;
+  --main-lighter: #ffae88;
+  --main-bcg: #ffffff;
+  --light-gray: #d3d3d3;
+  --light2-gray: #f0f0f0;
+  --text-main: #282828;
+  --text-lighter: #707070;
+  --text-darker: #080808;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: transparent;
+}
+
+@mixin mobile {
+  @media (max-width: 660px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
