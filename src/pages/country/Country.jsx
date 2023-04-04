@@ -28,6 +28,7 @@ const Country = () => {
         setNews(news);
         setArticlesNum({ total, displayed });
       } catch (error) {
+        console.log(error.message);
         setError(
           lang === "eng"
             ? "Something went wrong, please try again later."
